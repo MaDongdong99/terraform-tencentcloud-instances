@@ -12,6 +12,8 @@ locals {
       subnet_id = instance.subnet_id
       instance_type = instance.instance_type
       os_name = instance.os_name
+      image_name = instance.image_name
+      image_type = instance.image_type == null ? ["PUBLIC_IMAGE", "PRIVATE_IMAGE", "SHARED_IMAGE", "MARKET_IMAGE"] : instance.image_type
       image_id = instance.image_id
       key_id = instance.key_id
       system_disk_type = instance.system_disk_type == null || instance.system_disk_type == "" ? "CLOUD_PREMIUM" : instance.system_disk_type
@@ -45,6 +47,7 @@ module instances {
   project_id = each.value.project_id
   instance_type = each.value.instance_type
   os_name = each.value.os_name
+  image_type = each.value.image_type
   image_id = each.value.image_id
   system_disk_type = each.value.system_disk_type
   system_disk_size = each.value.system_disk_size

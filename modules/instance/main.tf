@@ -23,6 +23,8 @@ module "instance_type" {
 module "image" {
   source  = "../image"
   os_name = var.os_name == null ? "centos" : var.os_name
+  image_type = var.image_type
+  image_name = var.image_name
   image_id = var.image_id
 }
 

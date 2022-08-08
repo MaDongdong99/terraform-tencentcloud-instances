@@ -84,6 +84,18 @@ variable "os_name" {
   default     = null
 }
 
+variable "image_name" {
+  description = "A regex string to apply to the image list returned by TencentCloud, conflict with 'os_name"
+  type        = string
+  default     = null
+}
+
+variable "image_type" {
+  description = "The image type to use for the instance."
+  type        = list(string)
+  default     = null
+}
+
 variable "image_id" {
   description = "The image to use for the instance."
   type        = string

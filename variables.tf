@@ -10,6 +10,8 @@ variable "instances" {
     subnet_id = string
     instance_type = string
     os_name = optional(string)
+    image_name = optional(string)
+    image_type = optional(list(string))
     image_id = optional(string)
     key_id = string
     system_disk_type = optional(string)
