@@ -51,7 +51,7 @@ resource "tencentcloud_instance" "this" {
   tags = var.tags
 
   dynamic "data_disks" {
-    for_each = toset(var.data_disks)
+    for_each = var.data_disks
     content {
       data_disk_type = data_disks.value.type
       data_disk_size = data_disks.value.size
